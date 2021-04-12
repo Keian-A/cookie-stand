@@ -2,6 +2,7 @@ h2 {
   /* This will be the font for text/highlights */
   color: rgb(43, 92, 184);
   font-family: 'Indie Flower', cursive;
+  font-size: 1.3em;
 }
 
 h1 {
@@ -9,8 +10,9 @@ h1 {
   text-align: center;
 }
 
-h3 {
+li {
   /* This will be the font for data */
+  color: rgb(24, 85, 82);
   font-family: 'Inconsolata', monospace;
 }
 
