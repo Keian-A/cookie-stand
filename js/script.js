@@ -37,8 +37,8 @@ const limaLocation = {
 
 function cookieCalculator(a, b, c) {
   let numOfCustomers = Math.floor(Math.random() * (b - a)) + a;
-  let avgCookiePerCustomerHere = Math.floor(Math.random() * (c + 1));
-  let numOfCookies = avgCookiePerCustomerHere * numOfCustomers;
+  // let avgCookiePerCustomerHere = Math.floor(Math.random() * (c + 1));
+  let numOfCookies = Math.floor(c * numOfCustomers);
   return numOfCookies;
 }
 
