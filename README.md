@@ -5,7 +5,8 @@
 ## Author: Keian Anthony
 ## Links and Resources
 This [link](https://meyerweb.com/eric/tools/css/reset/) used to reset CSS in file `reset.css`
-This [link](https://fonts.google.com/specimen/Indie+Flower?category=Handwriting#standard-styles) used to get font for styling
+This [link](https://fonts.google.com/specimen/Indie+Flower?category=Handwriting#standard-styles) used to get font for styling text
+This [link](https://fonts.google.com/specimen/Inconsolata?category=Monospace) used to get font for styling data
 
 ## Reflections and Comments
-<!-- #### Reflections here -->
+#### Class 06 appendages to GitHub are under the branch name: class06-objects
