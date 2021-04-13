@@ -35,10 +35,12 @@ const limaLocation = {
   avgCookiePerCustomer: 4.6,
 }
 
+let numOfCookies = 0;
+
 function cookieCalculator(a, b, c) {
-  let numOfCustomers = Math.floor(Math.random() * (b - a)) + a;
+  let numOfCustomers = Math.floor(Math.random() * (b - a + 1)) + a;
   // let avgCookiePerCustomerHere = Math.floor(Math.random() * (c + 1));
-  let numOfCookies = Math.floor(c * numOfCustomers);
+  numOfCookies = Math.floor(c * numOfCustomers);
   return numOfCookies;
 }
 
@@ -59,6 +61,8 @@ for (let i = 0; i < storeLocations.length; i++) {
 
   let currentLocation = storeLocations[i];
 
+  let totalCookies = 0;
+
   const h2Elem = document.createElement('h2');
   h2Elem.textContent = currentLocation.name;
   article.appendChild(h2Elem);
@@ -71,5 +75,9 @@ for (let i = 0; i < storeLocations.length; i++) {
     const liElem = document.createElement('li');
     liElem.textContent = `${currentHour}: ${cookieCalculator(currentLocation.minCustomer, currentLocation.maxCustomer, currentLocation.avgCookiePerCustomer)} cookies`;
     ulElem.appendChild(liElem);
+    totalCookies += numOfCookies;
   }
+  const liElem = document.createElement('li');
+  liElem.textContent = `Total: ${totalCookies} cookies`;
+  ulElem.appendChild(liElem);
 }
