@@ -65,27 +65,34 @@ for (let i = -1; i < hoursOfOperation.length; i++) {
   }
 }
 
-function generateTable() {
-  for (let i = 0; i < locationList.length; i++) {
+for (let i = 0; i < locationList.length; i++) {
 
-    //Sets a variable equal to the current location
-    let currentLocation = locationList[i];
+  //Sets a variable equal to the current location
+  let currentLocation = locationList[i];
 
-    //
-    const trElem = document.createElement("tr");
-    trElem.textContent = `${currentLocation}`;
-    tableElem.appendChild(trElem);
-    let currentHrSales = currentLocation.hourlySalesArray[i];
-    for (let i = -1; i < hoursOfOperation.length; i++) {
-      if (i === -1) {
-        const tdElem = document.createElement("td");
-        tdElem.textContent = `${currentLocation}`;
-        trElem.appendChild(tdElem);
-      } else if (i >= 0) {
-        const tdElem = document.createElement("td");
-        tdElem.textContent = `${currentHrSales}`;
-        trElem.appendChild(tdElem);
-      }
+  //Creates new row for each location
+  const trElem1 = document.createElement("tr");
+  tableElem.appendChild(trElem1);
+
+  //Runs through all the values for hours of operation
+  for (let i = -1; i < hoursOfOperation.length; i++) {
+    if (i === -1) {
+
+      const tdElem = document.createElement("td");
+      tdElem.textContent = `${currentLocation.name}`;
+      trElem1.appendChild(tdElem);
+
+    } else if (i >= 0) {
+
+      //Creates variable to specify exactly which hour of which location is going in the specified table data cell
+      let currentHrSales = currentLocation.hourlySalesArray[i];
+
+      const tdElem = document.createElement("td");
+      tdElem.textContent = `${currentHrSales}`;
+      trElem1.appendChild(tdElem);
+
     }
   }
 }
+
+// console.log(`test`);
