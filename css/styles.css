@@ -19,3 +19,8 @@ li {
 * {
   background-color: rgb(228, 191, 191);
 }
+
+th, tr, td {
+  border: solid black 1px;
+  padding: 10px;
+}
