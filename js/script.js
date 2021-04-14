@@ -53,12 +53,22 @@ const trElem = document.createElement("tr");
 tableElem.appendChild(trElem);
 // const tdElem = document.createElement("td");
 
-for (let i = -1; i < hoursOfOperation.length; i++) {
+for (let i = -1; i < hoursOfOperation.length + 1; i++) {
+
   const thElem = document.createElement("th");
+
   if (i === -1) {
-    thElem.textContent = ` `;
+
+    thElem.textContent = ``;
     trElem.appendChild(thElem);
-  } else if (i >= 0) {
+
+  } else if (i === hoursOfOperation.length) {
+
+    thElem.textContent = `Totals:`;
+    trElem.appendChild(thElem);
+
+  } else if (i < hoursOfOperation.length) {
+
     let currentHour = hoursOfOperation[i];
     thElem.textContent = `${currentHour}`;
     trElem.appendChild(thElem);
@@ -70,19 +80,21 @@ for (let i = 0; i < locationList.length; i++) {
   //Sets a variable equal to the current location
   let currentLocation = locationList[i];
 
+  let totalCookiesHere = currentLocation.grandTotal;
+
   //Creates new row for each location
   const trElem1 = document.createElement("tr");
   tableElem.appendChild(trElem1);
 
   //Runs through all the values for hours of operation
-  for (let i = -1; i < hoursOfOperation.length; i++) {
+  for (let i = -1; i < hoursOfOperation.length + 1; i++) {
     if (i === -1) {
 
       const tdElem = document.createElement("td");
       tdElem.textContent = `${currentLocation.name}`;
       trElem1.appendChild(tdElem);
 
-    } else if (i >= 0) {
+    } else if (i >= 0 && i !== hoursOfOperation.length) {
 
       //Creates variable to specify exactly which hour of which location is going in the specified table data cell
       let currentHrSales = currentLocation.hourlySalesArray[i];
@@ -91,8 +103,11 @@ for (let i = 0; i < locationList.length; i++) {
       tdElem.textContent = `${currentHrSales}`;
       trElem1.appendChild(tdElem);
 
+    } else if (i === hoursOfOperation.length) {
+
+      const tdElem = document.createElement("td");
+      tdElem.textContent = `${totalCookiesHere}`;
+      trElem1.appendChild(tdElem);
     }
   }
 }
-
-// console.log(`test`);
