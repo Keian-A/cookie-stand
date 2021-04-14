@@ -1,4 +1,4 @@
-* {
+body, footer {
   background-color: rgb(46, 193, 212);
 }
 
@@ -6,7 +6,63 @@ header, body, footer {
   font-family: 'Indie Flower', cursive;
 }
 
-header h1 {
+header {
+  background-color: rgb(151, 214, 240);
+  border-bottom: solid black 2px;
+  display: flex;
+  position: sticky;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
+header ul {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5px;
+  width: 100%;
+}
+
+header ul li {
+  align-items: center;
+  display: flex;
   font-size: 2em;
 }
 
+#heroImage {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+.borderedImage img{
+  border: solid black 2px;
+}
+
+#threeImages {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+article {
+  border: solid black 2px;
+  font-size: 1.3em;
+  background-color: rgb(151, 214, 240);
+}
+
+#cutter, #cookie, #merch{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  width: 30%;
+
+}
