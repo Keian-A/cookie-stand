@@ -9,4 +9,6 @@ This [link](https://fonts.google.com/specimen/Indie+Flower?category=Handwriting#
 This [link](https://fonts.google.com/specimen/Inconsolata?category=Monospace) used to get font for styling data
 
 ## Reflections and Comments
-#### Class 06 appendages to GitHub are under the branch name: class06-objects
+#### Class 06 additions to GitHub are under the branch name: class06-objects
+Class 07 additions to GitHub are under the branch name: class07-tables
+Class 08 additions to GitHub are under the branch name: class08-css
