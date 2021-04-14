@@ -1,32 +1,57 @@
-h2 {
-  /* This will be the font for text/highlights */
-  color: rgb(22, 78, 75);
+body, footer {
+  background-color: rgb(46, 193, 212);
+}
+
+header, footer {
   font-family: 'Indie Flower', cursive;
-  font-size: 1.3em;
 }
 
-h1 {
-  font-size: 2.5em;
-  text-align: center;
-  color: rgb(22, 78, 75);
-}
-
-li {
-  /* This will be the font for data */
-  color: rgb(22, 78, 75);
+body {
   font-family: 'Inconsolata', monospace;
 }
 
-* {
+header {
   background-color: rgb(151, 214, 240);
+  border-bottom: solid black 2px;
+  display: flex;
+  position: sticky;
 }
 
-th, tr, td {
-  border: solid black 1px;
-  padding: 10px;
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
+header ul {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5px;
+  width: 100%;
+}
+
+header ul li {
+  align-items: center;
+  display: flex;
+  font-size: 2em;
+}
+
+article {
+  color: rgb(22, 78, 75);
+  font-size: 1.3em;
+}
+
+td, tr, th{
+  border: solid black 2px;
+  box-sizing: border-box;
+  padding: 5px;
   text-align: center;
 }
 
-footer {
-  color: rgb(22, 78, 75);
+th {
+  font-weight: bold;
 }
