@@ -90,9 +90,9 @@ for (let i = 0; i < locationList.length; i++) {
   for (let i = -1; i < hoursOfOperation.length + 1; i++) {
     if (i === -1) {
 
-      const tdElem = document.createElement("td");
-      tdElem.textContent = `${currentLocation.name}`;
-      trElem1.appendChild(tdElem);
+      const thElem = document.createElement("th");
+      thElem.textContent = `${currentLocation.name}`;
+      trElem1.appendChild(thElem);
 
     } else if (i >= 0 && i !== hoursOfOperation.length) {
 
