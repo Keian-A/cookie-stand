@@ -111,3 +111,36 @@ for (let i = 0; i < locationList.length; i++) {
     }
   }
 }
+
+
+function renderFooter() {
+
+  const trElemFoot = document.createElement("tr");
+  tableElem.appendChild(trElemFoot);
+
+  const thElem = document.createElement("th");
+  thElem.textContent = `Hourly Total:`;
+  trElemFoot.appendChild(thElem);
+
+  let dailyTotal = 0;
+
+  for (let i = 0; i < hoursOfOperation.length; i++) {
+    let hourlyTotal = 0;
+    for (let j = 0; j < locationList.length; j++) {
+      let currentLocation = locationList[j];
+      let currentHourSales = currentLocation.hourlySalesArray[i];
+      hourlyTotal += currentHourSales;
+    }
+    const tdElem = document.createElement("td");
+    tdElem.textContent = `${hourlyTotal}`;
+    trElemFoot.appendChild(tdElem);
+
+    dailyTotal += hourlyTotal;
+
+  }
+  const tdElem2 = document.createElement("td");
+  tdElem2.textContent = `${dailyTotal}`;
+  trElemFoot.appendChild(tdElem2);
+}
+
+renderFooter();
