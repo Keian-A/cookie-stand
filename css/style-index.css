@@ -1,0 +1,12 @@
+* {
+  background-color: rgb(46, 193, 212);
+}
+
+header, body, footer {
+  font-family: 'Indie Flower', cursive;
+}
+
+header h1 {
+  font-size: 2em;
+}
+

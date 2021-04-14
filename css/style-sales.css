@@ -1,6 +1,6 @@
 h2 {
   /* This will be the font for text/highlights */
-  color: rgb(43, 92, 184);
+  color: rgb(22, 78, 75);
   font-family: 'Indie Flower', cursive;
   font-size: 1.3em;
 }
@@ -8,20 +8,25 @@ h2 {
 h1 {
   font-size: 2.5em;
   text-align: center;
+  color: rgb(22, 78, 75);
 }
 
 li {
   /* This will be the font for data */
-  color: rgb(24, 85, 82);
+  color: rgb(22, 78, 75);
   font-family: 'Inconsolata', monospace;
 }
 
 * {
-  background-color: rgb(228, 191, 191);
+  background-color: rgb(151, 214, 240);
 }
 
 th, tr, td {
   border: solid black 1px;
   padding: 10px;
   text-align: center;
+}
+
+footer {
+  color: rgb(22, 78, 75);
 }
