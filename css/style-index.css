@@ -75,21 +75,21 @@ article {
   border-top: solid black 2px;
 }
 
-section {
-  box-sizing: border-box;
+#lastImage {
   display: flex;
-  margin-top: 2em;
+  align-items: flex-start;
 }
 
-#lastImage article img {
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
+#lastSection {
+  margin: 3em;
 }
 
-#lastImage article p {
-  display: flex;
-  width: 30%;
+#lastImage p {
+  margin: 1em 2em 0em 2em;
+}
+
+#lastImage img {
+  border-right: solid black 2px;
 }
 
 footer {
