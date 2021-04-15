@@ -48,14 +48,14 @@ header ul li {
 }
 
 #threeImages {
-  align-items: center;
+  align-items: stretch;
   display: flex;
   justify-content: space-evenly;
 }
 
 article {
   border: solid black 2px;
-  font-size: 1.3em;
+  font-size: 1.4em;
   background-color: rgb(151, 214, 240);
 }
 
@@ -64,5 +64,39 @@ article {
   flex-direction: column;
   justify-content:center;
   width: 30%;
+}
 
+#cutter p, #cookie p, #merch p, #cookie li{
+  padding: 10px;
+}
+
+#threeImages:not(#cookie) img {
+  border-bottom: solid black 2px;
+  border-top: solid black 2px;
+}
+
+section {
+  box-sizing: border-box;
+  display: flex;
+  margin-top: 2em;
+}
+
+#lastImage article img {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+#lastImage article p {
+  display: flex;
+  width: 30%;
+}
+
+footer {
+  background-color: rgb(151, 214, 240);
+  display: flex;
+  position:sticky;
+  margin-top: 2em;
+  padding: 1.4em;
+  border-top: solid black 2px;
 }
