@@ -15,7 +15,7 @@ function Location(name, minCustomer, maxCustomer, avgCookiePerCustomer) {
   }
 }
 
-//Creates the locatons using the construction function
+// Creates the locatons using the construction function
 const seattleLocation = new Location(`Seattle`, 23, 65, 6.3);
 const tokyoLocation = new Location(`Tokyo`, 3, 24, 1.2);
 const dubaiLocation = new Location(`Dubai`, 11, 38, 3.7);
@@ -25,18 +25,8 @@ const limaLocation = new Location(`Lima`, 2, 16, 4.6);
 //Array for all objects
 const locationList = [seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation];
 
-//listener
+//marker for form
 const formElem = document.getElementById("form")
-
-
-
-
-
-
-
-
-
-
 
 
 //function to generate a sales array for each location object
@@ -62,6 +52,7 @@ const articleElem = document.createElement("article");
 const tableElem = document.createElement("table");
 const trElem = document.createElement("tr");
 
+//rendering the header of the table element
 function renderHeader() {
   salesInfo.appendChild(articleElem);
 
@@ -71,26 +62,28 @@ function renderHeader() {
   // const tdElem = document.createElement("td");
 
 
+  for (let i = -1; i <= hoursOfOperation.length; i++) {
 
-  for (let i = -1; i < hoursOfOperation.length + 1; i++) {
-
-    const thElem = document.createElement("th");
-
+    console.log(trElem);
     if (i === -1) {
 
+      const thElem = document.createElement("th");
       thElem.textContent = ``;
-      trElem.appendChild(thElem);
-
-    } else if (i === hoursOfOperation.length) {
-
-      thElem.textContent = `Totals:`;
       trElem.appendChild(thElem);
 
     } else if (i < hoursOfOperation.length) {
 
+      const thElem = document.createElement("th");
       let currentHour = hoursOfOperation[i];
       thElem.textContent = `${currentHour}`;
       trElem.appendChild(thElem);
+
+    } else if (i === hoursOfOperation.length) {
+
+      const thElem = document.createElement("th");
+      thElem.textContent = `Totals:`;
+      trElem.appendChild(thElem);
+
     }
   }
 }
@@ -134,7 +127,6 @@ function renderContent() {
   }
 }
 
-
 function renderFooter() {
 
   const trElemFoot = document.createElement("tr");
@@ -164,6 +156,38 @@ function renderFooter() {
   tdElem2.textContent = `${dailyTotal}`;
   trElemFoot.appendChild(tdElem2);
 }
+
+//handle function
+function handleSubmit(e) {
+  e.preventDefault();
+
+  let name = e.target.name.value;
+  let minCustomer = parseInt(e.target.minCustomer.value);
+  let maxCustomer = parseInt(e.target.maxCustomer.value);
+  let avgCookiePerCustomer = parseInt(e.target.avgCookiePerCustomer.value);
+
+  let newLocationDataFromForm = new Location(name, minCustomer, maxCustomer, avgCookiePerCustomer);
+  locationList.push(newLocationDataFromForm);
+
+  e.target.reset();
+
+  tableElem.innerHTML = ' ';
+
+  trElem.innerHTML = ` `;
+
+  //calls the function to generate sales array for each location
+  for (let i = 0; i < locationList.length; i++) {
+    let currentLocation = locationList[i];
+    generateSalesArray(currentLocation);
+  }
+
+  renderHeader();
+  renderContent();
+  renderFooter();
+}
+
+//listener
+formElem.addEventListener('submit', handleSubmit);
 
 renderHeader();
 renderContent();
