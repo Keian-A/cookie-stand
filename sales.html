@@ -22,10 +22,34 @@
   </header>
 
   <main>
-    <h2>Store Location Information:</h2>
-    <div id="salesInfo">
-      <!-- Table gets sent here from JS file -->
-    </div>
+
+    <form id="form">
+      <fieldset>
+        <legend>Insert Location Information</legend>
+
+        <label>Location name</label>
+        <input type="text" name="newLocation">
+
+        <label>Minimum Customers Per Hour</label>
+        <input type="number" name="minCustomers">
+
+        <label>Maximum Customers Per Hour</label>
+        <input type="number" name="maxCustomers">
+
+        <label>Average Cookies Sold Per Customer</label>
+        <input type="number" name="avgCookiesPerCustomer">
+
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+
+    <section id="salesTable">
+      <h2>Store Location Information:</h2>
+      <div id="salesInfo">
+        <!-- Table gets sent here from JS file -->
+      </div>
+    </section>
+
   </main>
 
   <footer>

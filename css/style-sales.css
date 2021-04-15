@@ -40,9 +40,41 @@ header ul li {
   font-size: 2em;
 }
 
-article {
+#form {
+  background-color: rgb(151, 214, 240);
+  display: flex;
+  margin: 2em;
+  width: 30%;
+  border: solid black 2px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: black dotted 2px;
+  margin: 2em;
+  width: 90%;
+  background-color: rgb(151, 214, 240);
+}
+
+button {
+  margin-top: 1.5em;
+  width: 20%;
+  justify-content: center;
+}
+
+#salesTable {
   color: rgb(22, 78, 75);
   font-size: 1.3em;
+  margin: 2em;
+}
+
+h2 {
+  font-weight: bold;
 }
 
 td, tr, th{
@@ -50,8 +82,14 @@ td, tr, th{
   box-sizing: border-box;
   padding: 5px;
   text-align: center;
+  background-color: rgb(151, 214, 240);
 }
 
 th {
   font-weight: bold;
+}
+
+footer {
+  position: sticky;
+  padding: 2em;
 }

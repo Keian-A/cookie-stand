@@ -25,6 +25,20 @@ const limaLocation = new Location(`Lima`, 2, 16, 4.6);
 //Array for all objects
 const locationList = [seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation];
 
+//listener
+const formElem = document.getElementById("form")
+
+
+
+
+
+
+
+
+
+
+
+
 //function to generate a sales array for each location object
 function generateSalesArray(currentLocation) {
   currentLocation.grandTotal = 0;
@@ -45,69 +59,77 @@ for (let i = 0; i < locationList.length; i++) {
 
 const salesInfo = document.getElementById("salesInfo");
 const articleElem = document.createElement("article");
-salesInfo.appendChild(articleElem);
 const tableElem = document.createElement("table");
-articleElem.appendChild(tableElem);
-
 const trElem = document.createElement("tr");
-tableElem.appendChild(trElem);
-// const tdElem = document.createElement("td");
 
-for (let i = -1; i < hoursOfOperation.length + 1; i++) {
+function renderHeader() {
+  salesInfo.appendChild(articleElem);
 
-  const thElem = document.createElement("th");
+  articleElem.appendChild(tableElem);
 
-  if (i === -1) {
+  tableElem.appendChild(trElem);
+  // const tdElem = document.createElement("td");
 
-    thElem.textContent = ``;
-    trElem.appendChild(thElem);
 
-  } else if (i === hoursOfOperation.length) {
 
-    thElem.textContent = `Totals:`;
-    trElem.appendChild(thElem);
-
-  } else if (i < hoursOfOperation.length) {
-
-    let currentHour = hoursOfOperation[i];
-    thElem.textContent = `${currentHour}`;
-    trElem.appendChild(thElem);
-  }
-}
-
-for (let i = 0; i < locationList.length; i++) {
-
-  //Sets a variable equal to the current location
-  let currentLocation = locationList[i];
-
-  let totalCookiesHere = currentLocation.grandTotal;
-
-  //Creates new row for each location
-  const trElem1 = document.createElement("tr");
-  tableElem.appendChild(trElem1);
-
-  //Runs through all the values for hours of operation
   for (let i = -1; i < hoursOfOperation.length + 1; i++) {
+
+    const thElem = document.createElement("th");
+
     if (i === -1) {
 
-      const thElem = document.createElement("th");
-      thElem.textContent = `${currentLocation.name}`;
-      trElem1.appendChild(thElem);
-
-    } else if (i >= 0 && i !== hoursOfOperation.length) {
-
-      //Creates variable to specify exactly which hour of which location is going in the specified table data cell
-      let currentHrSales = currentLocation.hourlySalesArray[i];
-
-      const tdElem = document.createElement("td");
-      tdElem.textContent = `${currentHrSales}`;
-      trElem1.appendChild(tdElem);
+      thElem.textContent = ``;
+      trElem.appendChild(thElem);
 
     } else if (i === hoursOfOperation.length) {
 
-      const tdElem = document.createElement("td");
-      tdElem.textContent = `${totalCookiesHere}`;
-      trElem1.appendChild(tdElem);
+      thElem.textContent = `Totals:`;
+      trElem.appendChild(thElem);
+
+    } else if (i < hoursOfOperation.length) {
+
+      let currentHour = hoursOfOperation[i];
+      thElem.textContent = `${currentHour}`;
+      trElem.appendChild(thElem);
+    }
+  }
+}
+
+function renderContent() {
+  for (let i = 0; i < locationList.length; i++) {
+
+    //Sets a variable equal to the current location
+    let currentLocation = locationList[i];
+
+    let totalCookiesHere = currentLocation.grandTotal;
+
+    //Creates new row for each location
+    const trElem1 = document.createElement("tr");
+    tableElem.appendChild(trElem1);
+
+    //Runs through all the values for hours of operation
+    for (let i = -1; i < hoursOfOperation.length + 1; i++) {
+      if (i === -1) {
+
+        const thElem = document.createElement("th");
+        thElem.textContent = `${currentLocation.name}`;
+        trElem1.appendChild(thElem);
+
+      } else if (i >= 0 && i !== hoursOfOperation.length) {
+
+        //Creates variable to specify exactly which hour of which location is going in the specified table data cell
+        let currentHrSales = currentLocation.hourlySalesArray[i];
+
+        const tdElem = document.createElement("td");
+        tdElem.textContent = `${currentHrSales}`;
+        trElem1.appendChild(tdElem);
+
+      } else if (i === hoursOfOperation.length) {
+
+        const tdElem = document.createElement("td");
+        tdElem.textContent = `${totalCookiesHere}`;
+        trElem1.appendChild(tdElem);
+      }
     }
   }
 }
@@ -143,4 +165,6 @@ function renderFooter() {
   trElemFoot.appendChild(tdElem2);
 }
 
+renderHeader();
+renderContent();
 renderFooter();
