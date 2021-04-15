@@ -22,6 +22,12 @@ const dubaiLocation = new Location(`Dubai`, 11, 38, 3.7);
 const parisLocation = new Location(`Paris`, 20, 38, 2.3);
 const limaLocation = new Location(`Lima`, 2, 16, 4.6);
 
+//global variables to indicate elements on HTML page
+const salesInfo = document.getElementById("salesInfo");
+const articleElem = document.createElement("article");
+const tableElem = document.createElement("table");
+const trElem = document.createElement("tr");
+
 //Array for all objects
 const locationList = [seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation];
 
@@ -47,10 +53,6 @@ for (let i = 0; i < locationList.length; i++) {
   generateSalesArray(currentLocation);
 }
 
-const salesInfo = document.getElementById("salesInfo");
-const articleElem = document.createElement("article");
-const tableElem = document.createElement("table");
-const trElem = document.createElement("tr");
 
 //rendering the header of the table element
 function renderHeader() {
