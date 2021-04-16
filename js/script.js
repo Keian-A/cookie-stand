@@ -10,7 +10,7 @@ function Location(name, minCustomer, maxCustomer, avgCookiePerCustomer) {
   this.maxCustomer = maxCustomer;
   this.avgCookiePerCustomer = avgCookiePerCustomer;
   this.numOfCustomers = function () {
-    let numOfCustomers = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + minCustomer;
+    let numOfCustomers = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer;
     return numOfCustomers;
   }
 }
@@ -32,7 +32,7 @@ const trElem = document.createElement("tr");
 const locationList = [seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation];
 
 //marker for form
-const formElem = document.getElementById("form")
+const formElem = document.getElementById("form");
 
 
 //function to generate a sales array for each location object

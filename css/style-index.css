@@ -62,34 +62,39 @@ article {
 #cutter, #cookie, #merch{
   display: flex;
   flex-direction: column;
-  justify-content:center;
   width: 30%;
 }
 
 #cutter p, #cookie p, #merch p, #cookie li{
-  padding: 10px;
+  padding: 20px;
 }
 
 #threeImages:not(#cookie) img {
   border-bottom: solid black 2px;
-  border-top: solid black 2px;
+  object-fit:fill;
+  object-position: top;
 }
 
 #lastImage {
   display: flex;
-  align-items: flex-start;
-}
-
-#lastSection {
-  margin: 3em;
-}
-
-#lastImage p {
-  margin: 1em 2em 0em 2em;
+  justify-content: center;
 }
 
 #lastImage img {
-  border-right: solid black 2px;
+  width: 483px;
+  height: 183px;
+  margin: auto;
+}
+
+#lastSection {
+  margin: 3em auto;
+  width: 50%;
+}
+
+#lastImage p {
+  border-left: solid black 2px;
+  margin: 0em 2em 0em 2em;
+  padding: 1em;
 }
 
 footer {
